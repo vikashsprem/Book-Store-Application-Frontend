@@ -4,15 +4,6 @@ import bookImage from '../assets/think.jpg';
 function BookCard(props) {
   // Destructuring with a default empty object to handle the case where props.book is undefined
   const { title, image, rating, price, discount } = props.book || {};
-  console.log(props.book);
-  const [notify, setNotify] = useState(false);
-
-  const handleAddProduct = () => {
-    setNotify(true);
-    setTimeout(() => {
-      setNotify(false);
-    }, 3000);
-  };
 
   return (
     <div className="bg-gray-200 w-min h-min">

@@ -1,0 +1,28 @@
+#cart-button,
+#download-button,
+#upload-button {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.2rem 2rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#cart-button:hover,
+#download-button:hover,
+#upload-button:hover {
+    background-color: rgb(209, 209, 13);
+    color: #000000;
+    cursor: pointer;
+}
+
+/* select category of search bar */
+#category {
+    background-color: rgb(9, 9, 65);
+    color: white;
+    font-size: 1rem;
+    margin: 0.2rem 2rem;
+    padding: 1rem 1rem;
+    text-decoration: none;
+}
