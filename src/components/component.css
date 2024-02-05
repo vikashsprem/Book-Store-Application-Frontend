@@ -1,3 +1,12 @@
+/*################################# Input focus CSS ################################ */
+
+input:focus {
+    outline: none;
+    border: 1px solid blue;
+    box-shadow: 0 0 5px #0d58e3;
+}
+
+
 /*################################# Shopping Card CSS ################################ */
 
 #cart-button,
@@ -46,4 +55,32 @@
 
 .animate-slide-fade>* {
     animation: slideFadeIn 0.5s ease-in-out;
+}
+
+
+/* ######################### Animation for all components ############################ */
+
+::placeholder {
+    color: #999;
+    /* Set the color */
+    font-style: italic;
+    /* Set the font style */
+    font-size: 15px;
+    text-align: center;
+}
+
+/* input text color styling as well */
+input[type] {
+    color: #342f2f;
+    font-size: 15px;
+    text-align: center;
+    font-family: cursive;
+    opacity: 0.7;
+}
+
+.upload-box {
+
+    background-image: url("https://images.pexels.com/photos/302655/pexels-photo-302655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size: cover;
+    background-position: center;
 }
