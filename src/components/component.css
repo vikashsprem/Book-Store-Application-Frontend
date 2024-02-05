@@ -1,3 +1,5 @@
+/*################################# Shopping Card CSS ################################ */
+
 #cart-button,
 #download-button,
 #upload-button {
@@ -25,4 +27,23 @@
     margin: 0.2rem 2rem;
     padding: 1rem 1rem;
     text-decoration: none;
+}
+
+
+/* ######################### Animation for all components ############################ */
+
+@keyframes slideFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slide-fade>* {
+    animation: slideFadeIn 0.5s ease-in-out;
 }

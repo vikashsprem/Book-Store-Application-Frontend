@@ -5,6 +5,10 @@ import Image2 from "../assets/books-down.jpg";
 function PromoCard() {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const images = [Image2, Image1];
+    const quotes = [
+        "Expand your mind with the world of books",
+        "Dive into the magic of reading"
+    ];
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -15,8 +19,11 @@ function PromoCard() {
     }, [images]);
 
     return (
-        <div className="w-full h-1/4">
+        <div className="w-full h-2/5 relative ">
             <img src={images[currentImageIndex]} alt="banner" />
+            <div className="absolute bottom-48 left-0 right-0 text-center uppercase text-white text-4xl font-bold p-5 bg-black bg-opacity-30 ">
+                <p className="text-5lx shadow-gray-800">{quotes[currentImageIndex]}</p>
+            </div>
         </div>
     );
 }
