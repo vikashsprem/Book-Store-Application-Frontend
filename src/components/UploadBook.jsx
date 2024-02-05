@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { addBook } from '../apiConfig/ApiService';
-
 const BookInput = () => {
     const navigate = useNavigate();
 
@@ -34,49 +33,137 @@ const BookInput = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className='bg-green-500 p-2 m-2 space-x-1 space-y-1'>
-            <h1 className='text-3xl bg-yellow-400 text-center m-2 p-2'>Fill out the book details</h1>
-            <label>
-                Title:
-                <input type="text" name="title" value={book.title} onChange={handleChange} />
-            </label>
+        <div className="container mx-auto mt-10 w-1/2">
+            <form onSubmit={handleSubmit} className="max-w-md mx-auto bg-white p-8 border rounded shadow-lg">
+                <div className="mb-4">
+                    <label htmlFor="title" className="block text-sm font-medium text-gray-600">
+                        Title
+                    </label>
+                    <input
+                        type="text"
+                        className="mt-1 p-2 border rounded w-full"
+                        id="title"
+                        name="title"
+                        value={book.title}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div className="mb-4">
+                    <label htmlFor="author" className="block text-sm font-medium text-gray-600">
+                        Author
+                    </label>
+                    <input
+                        type="text"
+                        className="mt-1 p-2 border rounded w-full"
+                        id="author"
+                        name="author"
+                        value={book.author}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div className="mb-4">
+                    <label htmlFor="genre" className="block text-sm font-medium text-gray-600">
+                        Genre
+                    </label>
+                    <input
+                        type="text"
+                        className="mt-1 p-2 border rounded w-full"
+                        id="genre"
+                        name="genre"
+                        value={book.genre}
+                        onChange={handleChange}
+                    />
+                </div>
 
-            <label>
-                Author:
-                <input type="text" name="author" value={book.author} onChange={handleChange} />
-            </label>
+                <div className="mb-4">
+                    <label htmlFor="publicationYear" className="block text-sm font-medium text-gray-600">
+                        Publication Year
+                    </label>
+                    <input
+                        type="number"
+                        className="mt-1 p-2 border rounded w-full"
+                        id="publicationYear"
+                        name="publicationYear"
+                        value={book.publicationYear}
+                        onChange={handleChange}
+                    />
+                </div>
 
-            <label>
-                Genre:
-                <input type="text" name="genre" value={book.genre} onChange={handleChange} />
-            </label>
+                <div className="mb-4">
+                    <label htmlFor="price" className="block text-sm font-medium text-gray-600">
+                        Price
+                    </label>
+                    <input
+                        type="number"
+                        className="mt-1 p-2 border rounded w-full"
+                        id="price"
+                        name="price"
+                        value={book.price}
+                        onChange={handleChange}
+                    />
+                </div>
 
-            <label>
-                Publication Year:
-                <input type="text" name="publicationYear" value={book.publicationYear} onChange={handleChange} />
-            </label>
+                <div className="mb-4">
+                    <label htmlFor="language" className="block text-sm font-medium text-gray-600">
+                        Language
+                    </label>
+                    <input
+                        type="text"
+                        className="mt-1 p-2 border rounded w-full"
+                        id="language"
+                        name="language"
+                        value={book.language}
+                        onChange={handleChange}
+                    />
+                </div>
 
-            <label>
-                Price:
-                <input type="number" name="price" value={book.price} onChange={handleChange} />
-            </label>
+                <div className="mb-4">
+                    <label htmlFor="description" className="block text-sm font-medium text-gray-600">
+                        Description
+                    </label>
+                    <textarea
+                        className="mt-1 p-2 border rounded w-full"
+                        id="description"
+                        name="description"
+                        value={book.description}
+                        onChange={handleChange}
+                    />
+                </div>
 
-            <label>
-                Language:
-                <input type="text" name="language" value={book.language} onChange={handleChange} />
-            </label>
+                <div className="mb-4">
+                    <label htmlFor="discount" className="block text-sm font-medium text-gray-600">
+                        Discount
+                    </label>
+                    <input
+                        type="number"
+                        className="mt-1 p-2 border rounded w-full"
+                        id="discount"
+                        name="discount"
+                        value={book.discount}
+                        onChange={handleChange}
+                    />
+                </div>
 
-            <label>
-                Description:
-                <textarea name="description" value={book.description} onChange={handleChange} />
-            </label>
+                <div className="mb-4">
+                    <label htmlFor="imageLink" className="block text-sm font-medium text-gray-600">
+                        Image Link
+                    </label>
+                    <input
+                        type="text"
+                        className="mt-1 p-2 border rounded w-full"
+                        id="imageLink"
+                        name="imageLink"
+                        value={book.imageLink}
+                        onChange={handleChange}
+                    />
+                </div>
 
-            <label>
-                Image Link:
-                <input type="text" name="imageLink" value={book.imageLink} onChange={handleChange} />
-            </label>
-            <button type="submit" className='border border-black p-2 rounded-md m-2'>Add Book</button>
-        </form>
+
+                <button type="submit" className="bg-blue-500 text-white p-2 rounded">
+                    Submit
+                </button>
+            </form>
+        </div>
     );
 };
 
