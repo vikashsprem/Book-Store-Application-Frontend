@@ -24,7 +24,7 @@ const OtpAuth = () => {
             <div className="flex justify-center h-screen">
                 {/* write a message to send sucessfully and one button for go back and login */}
 
-                <form onSubmit={handleSubmit} className="space-y-6 w-2/5 p-3 rounded-md" id="form">
+                <form onSubmit={handleSubmit} className="space-y-6 max-w-md p-3 m-2 rounded-md" id="form">
                     <div className="font-semibold p-2">
                         <p className="text-3xl text-green-500" style={{ wordSpacing: '-0.2rem', fontFamily: 'cursive' }}>An email has been sent to your account successfully.</p>
                     </div>
