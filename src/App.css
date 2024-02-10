@@ -1,0 +1,12 @@
+/* write the css for make background color dark and impressive */
+
+body {
+    background-color: rgb(17, 24, 39);
+    color: white;
+}
+
+body {
+    height: max-content;
+    background-color: rgb(18, 18, 18);
+    background-image: linear-gradient(rgb(51, 58, 64), rgb(17, 24, 39));
+}

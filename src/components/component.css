@@ -57,30 +57,32 @@ input:focus {
     animation: slideFadeIn 0.5s ease-in-out;
 }
 
-
-/* ######################### Animation for all components ############################ */
-
 ::placeholder {
     color: #999;
-    /* Set the color */
-    font-style: italic;
-    /* Set the font style */
     font-size: 15px;
-    text-align: center;
-}
-
-/* input text color styling as well */
-input[type] {
-    color: #342f2f;
-    font-size: 15px;
-    text-align: center;
-    font-family: cursive;
-    opacity: 0.7;
 }
 
 .upload-box {
+    background-color: rgb(17, 24, 39);
+    font-size: 1rem;
+    margin: 0.2rem 2rem;
+    padding: 1rem 1rem;
+    text-decoration: none;
+}
 
-    background-image: url("https://images.pexels.com/photos/302655/pexels-photo-302655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-    background-size: cover;
-    background-position: center;
+.input-field {
+    background-color: rgb(17, 24, 39);
+    padding: 4px;
+}
+
+
+/* component.css */
+.container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: auto;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
 }
