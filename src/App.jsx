@@ -9,9 +9,10 @@ import CartItems from "./components/CartItems";
 import UserAccount from "./components/UserAccount";
 import LoginComponent from "./authComponent/LoginComponent";
 import RegisterationComponent from "./authComponent/RegisterationComponent";
-import OtpAuth from "./authComponent/otpAuth";
+import Signup from "./authComponent/Signup";
 import AuthProvider, { useAuth } from "./security/AuthContext";
 import UploadBook from "./components/UploadBook";
+import "./App.css";
 
 function AuthenticatedRoute({ children }) {
   const authContext = useAuth();
@@ -26,7 +27,7 @@ const App = () => {
         {false ? <NavBar /> : null}
         <Routes>
           <Route path="/book/upload" element={<AuthenticatedRoute><UploadBook /></AuthenticatedRoute>} />
-          <Route path="/users/auth" element={<OtpAuth />} />
+          <Route path="/users/signup" element={<Signup />} />
           <Route path="/auth/login" element={<LoginComponent />} />
           <Route path="/users/create" element={<RegisterationComponent />} />
           <Route path="/" element={<AuthenticatedRoute><BookList /></AuthenticatedRoute>} />

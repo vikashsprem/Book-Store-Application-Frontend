@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./component.css";
 
 function SearchBar() {
     const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
@@ -12,7 +13,7 @@ function SearchBar() {
             <form>
                 <div className="flex">
 
-                    <select className='p-1 bg-slate-400'>
+                    <select className='p-1 bg-slate-500 outline-none'>
                         <option id='category' value="All">All</option>
                         <option id='category' value="Fiction">Fiction</option>
                         <option id='category' value="Science Fiction">Science Fiction</option>

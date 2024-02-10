@@ -4,9 +4,10 @@ import loginImage from "../assets/login.png";
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../security/AuthContext';
+import NavBar from '../components/NavBar';
 
 const LoginComponent = () => {
-    
+
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     // const [error, setError] = useState(false);
@@ -16,7 +17,7 @@ const LoginComponent = () => {
     const navigate = useNavigate();
     const auth = useAuth();
 
-    
+
     async function handleSubmit(event) {
         console.log(event)
         event.preventDefault();
@@ -26,7 +27,7 @@ const LoginComponent = () => {
         else {
             setHasLoginFailed(true);
         }
-        
+
     }
 
     // create a message component to display the error message if login fails for 3 seconds
@@ -35,44 +36,71 @@ const LoginComponent = () => {
             setTimeout(() => {
                 setHasLoginFailed(false);
             }, 3000);
-            return <p id='invalid' style={{ fontSize: '0.63em' ,color:'red' }}>Invalid username or password</p>
+            return <p id='invalid' style={{ fontSize: '0.63em', padding: '2px' }}>Invalid username or password</p>
         }
     }
 
     return (
         <>
-            <div className='grid justify-center '>
-                <div className='mt-7 flex justify-center'>
-                    <img src={loginImage} alt="login" className='w-1/3' />
+            <div>
+                <div className='mb-7'>
+                    <NavBar />
                 </div>
+
                 <div className='flex justify-center'>
-                    <form onSubmit={handleSubmit} className='space-y-6 w-3/5 shadow-lg p-3'>
-                        <div className='m-2 flex justify-center'>
-                            <input placeholder='Enter your email' type="username" className='input-box p-1 w-full border-gray-400 border rounded-sm' name="username" required value={username} onChange={(e) => setUsername(e.target.value)} />
+                    <form onSubmit={handleSubmit} className='space-y-6 w-2/5-md m-2 p-3 rounded-md' id='form'>
+                        <div className='text-center'>
+                            <p id='account-paragraph' >Log in to BookCenter</p>
                         </div>
-                        <div className='m-2 flex justify-center flex-col space-y-1'>
-                            <input placeholder='Enter your password' type="password" className='input-box p-1 w-full border-gray-400 border rounded-sm' name="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
-                            <div>
-                                {handleInvalidCredentials()}
-                            </div>
-                            
+                        <div className='flex justify-center bg-red-600'>
+                            {handleInvalidCredentials()}
                         </div>
-                        
-                            
-                        
                         <div className='m-2 flex justify-center'>
-                            <button type="submit" className='bg-blue-800 hover:bg-blue-900 text-white p-2 w-full font-semibold text-sm rounded-sm'>
-                                Continue
+                            <input placeholder='Email or username' type="username" className='input-box  px-3 py-2 w-4/5  rounded-sm' name="username" required value={username} onChange={(e) => setUsername(e.target.value)} />
+                        </div>
+                        <div className='m-2 flex justify-center space-y-1'>
+                            <input placeholder='Password' type="password" className='input-box  px-3 w-4/5 py-2  rounded-sm' name="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+                        </div>
+
+
+                        <div className='m-2 flex justify-center'>
+                            <button type="submit" className=' text-black p-2 w-4/5 font-semibold text-sm rounded-sm' id='continue-button'>
+                                Log In
                             </button>
                         </div>
-                        
+
                         <div className='flex justify-center'>
-                            <p style={{ fontSize: '0.63em' }}>Note: If you haven't registered yet.<Link to="/users/create" className='text-blue-600'> Register now</Link></p>
+                            <Link to="/users/create" className='text-white text-xs font-semibold underline'>Forgot your password?</Link>
+                        </div>
+
+                        <div className='flex justify-center'>
+                            <p className='border border-t-black opacity-10 w-3/4'></p>
+                        </div>
+
+                        <div >
+                            <div className='m-2 flex justify-center'>
+                                <a href="" className='border-gray border font-bold  text-white p-2 w-4/5 text-center rounded-3xl text-sm'>Continue with Google</a>
+                            </div>
+                            <div className='m-2 flex justify-center'>
+                                <a href="" className='border-gray border font-bold text-white p-2 w-4/5 text-center rounded-3xl text-sm'>Continue with Facebook</a>
+                            </div>
+                            <div className='m-2 flex justify-center'>
+                                <a href="" className='border-gray border font-bold  text-white p-2 w-4/5 text-center rounded-3xl text-sm'>Continue with phone number</a>
+                            </div>
+                        </div>
+
+                        <div className='flex justify-center'>
+                            <p className='border border-t-black opacity-10 w-3/4'></p>
+                        </div>
+
+                        <div className='flex justify-center'>
+                            <p style={{ fontSize: '0.73em' }} className='font-semibold opacity-60'>Note: If you haven't registered yet.<Link to="/users/create" className='text-white underline'> Register now</Link></p>
                         </div>
                     </form>
                 </div>
             </div>
         </>
+
     );
 };
 

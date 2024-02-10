@@ -2,57 +2,30 @@
 .input-box:focus {
   outline: none;
   border: 1px solid blue;
-  box-shadow: 0 0 2px #0d58e3;
+  box-shadow: 0px 0px 3px #0d58e3;
 }
 
 
-/* ################## Register Component #######################3 */
-
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-content {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
 
 
 ::placeholder {
-  color: #999;
-  /* Set the color */
-  font-style: italic;
+  color: #000000;
   /* Set the font style */
   font-size: 15px;
   text-align: center;
 }
+
 /* input text color styling as well */
-input[type] {
-  color: #342f2f;
-  font-size: 15px;
-  text-align: center;
-  font-family: cursive;
-}
+
 
 #account-paragraph {
-  font-size: 1.2rem;
-  font-family: cursive;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2.2rem;
   text-shadow: rgb(72, 66, 66) 0.1em 0.1em 0.2em;
-  font-weight: bold;
+  font-weight: bolder;
   margin: 0.2rem 1rem;
   padding: 0.5rem 1rem;
-  text-decoration: none;
-  text-transform: uppercase;
+  word-spacing: -0.3rem;
 }
 
 
@@ -78,4 +51,36 @@ input[type] {
   30% {
     transform: translateX(-5px);
   }
+}
+
+/* ############## Form ################## */
+
+#form {
+  background-color: rgb(17, 24, 39);
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+  padding: 1rem 1rem;
+}
+
+.input-box {
+  background-color: rgb(17, 24, 39);
+  border: 1px solid rgb(158, 152, 152);
+  font-size: 1rem;
+  margin: 0.2rem 2rem;
+  padding: 1rem 1rem;
+  text-decoration: none;
+}
+
+#continue-button {
+  background-color: rgb(30, 215, 96);
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+#continue-button:hover {
+  background-color: rgb(14, 165, 67);
+  color: #000000;
+  cursor: pointer;
 }
