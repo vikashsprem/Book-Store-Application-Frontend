@@ -4,7 +4,6 @@ import { addBook } from '../apiConfig/ApiService';
 import "./component.css";
 const BookInput = () => {
     const navigate = useNavigate();
-
     const [book, setBook] = useState({
         id: null,
         rating: 0,
@@ -13,9 +12,9 @@ const BookInput = () => {
         title: '',
         author: '',
         genre: '',
-        publicationYear: 0,
+        publicationYear: '',
         quantity: 0,
-        price: 0,
+        price: '',
         language: '',
         imageLink: '',
     });
@@ -35,8 +34,20 @@ const BookInput = () => {
 
     return (
         <div className="flex flex-col md:flex-row mx-auto upload-box">
-            <div className='w-full md:w-1/2 m-2 order-3 max-w-md mx-auto text-black bg-slate-200 border border-stone-950 rounded shadow-2xl'>
+            <div className='w-full md:w-1/2 m-2 order-3 max-w-md mx-auto text-black bg-slate-200 border border-stone-950 rounded shadow-2xl container md:h-screen overflow-y-scroll'>
                 <h1 className="text-3xl font-bold m-5 text-center">Add Book</h1>
+                <div className='flex justify-center mb-5'>
+                    {book.imageLink && <img src={book.imageLink} alt="Book Cover" className="w-3/4 h-auto mb-4" />}
+                </div>
+                <div className='grid justify-center bg-gray-400 p-5 rounded-md'>
+                    {book.description && <p className="font-medium mb-2"><strong>{`Description: ${book.description}`}</strong></p>}
+                    {book.title && <h2 className="text-gray-700 mb-2"><strong>{`Title: ${book.title}`}</strong></h2>}
+                    {book.author && <p className="text-gray-700 mb-2"><strong>{`Author: ${book.author}`}</strong></p>}
+                    {book.genre && <p className="text-gray-700 mb-2"><strong>{`Genre: ${book.genre}`}</strong></p>}
+                    {book.publicationYear && <p className="text-gray-700 mb-2"><strong>{`Publication Year: ${book.publicationYear}`}</strong></p>}
+                    {book.price && <p className="text-gray-700 mb-2"><strong>{`Price: ₹${book.price}`}</strong></p>}
+                    {book.language && <p className="text-gray-700 mb-2"><strong>{`Language: ${book.language}`}</strong></p>}
+                </div>
             </div>
 
             <div className='flex justify-between m-3 order-2'>
@@ -49,7 +60,7 @@ const BookInput = () => {
                 </div>
                 <form onSubmit={handleSubmit} className="max-w-md mx-auto  p-8 border rounded shadow-lg" style={{ backgroundColor: "rgb(18, 18, 18)" }}>
                     <div className="mb-4">
-                        <label htmlFor="title" className="block text-sm font-medium text-gray-600">
+                        <label htmlFor="title" className="block text-sm font-medium text-gray-300">
                             Title
                         </label>
                         <input
@@ -62,7 +73,7 @@ const BookInput = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="author" className="block text-sm font-medium text-gray-600">
+                        <label htmlFor="author" className="block text-sm font-medium text-gray-300">
                             Author
                         </label>
                         <input
@@ -75,7 +86,7 @@ const BookInput = () => {
                         />
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="genre" className="block text-sm font-medium text-gray-600">
+                        <label htmlFor="genre" className="block text-sm font-medium text-gray-300">
                             Genre
                         </label>
                         <input
@@ -89,7 +100,7 @@ const BookInput = () => {
                     </div>
 
                     <div className="mb-4">
-                        <label htmlFor="publicationYear" className="block text-sm font-medium text-gray-600">
+                        <label htmlFor="publicationYear" className="block text-sm font-medium text-gray-300">
                             Publication Year
                         </label>
                         <input
@@ -103,7 +114,7 @@ const BookInput = () => {
                     </div>
 
                     <div className="mb-4">
-                        <label htmlFor="price" className="block text-sm font-medium text-gray-600">
+                        <label htmlFor="price" className="block text-sm font-medium text-gray-300">
                             Price
                         </label>
                         <input
@@ -117,7 +128,7 @@ const BookInput = () => {
                     </div>
 
                     <div className="mb-4">
-                        <label htmlFor="language" className="block text-sm font-medium text-gray-600">
+                        <label htmlFor="language" className="block text-sm font-medium text-gray-300">
                             Language
                         </label>
                         <input
@@ -131,7 +142,7 @@ const BookInput = () => {
                     </div>
 
                     <div className="mb-4">
-                        <label htmlFor="description" className="block text-sm font-medium text-gray-600">
+                        <label htmlFor="description" className="block text-sm font-medium text-gray-300">
                             Description
                         </label>
                         <textarea
@@ -144,21 +155,7 @@ const BookInput = () => {
                     </div>
 
                     <div className="mb-4">
-                        <label htmlFor="discount" className="block text-sm font-medium text-gray-600">
-                            Discount
-                        </label>
-                        <input
-                            type="number"
-                            className="input-field mt-1 px-4 py-2 p-2 border rounded w-full"
-                            id="discount"
-                            name="discount"
-                            value={book.discount}
-                            onChange={handleChange}
-                        />
-                    </div>
-
-                    <div className="mb-4">
-                        <label htmlFor="imageLink" className="block text-sm font-medium text-gray-600">
+                        <label htmlFor="imageLink" className="block text-sm font-medium text-gray-300">
                             Image Link
                         </label>
                         <input
@@ -168,6 +165,17 @@ const BookInput = () => {
                             name="imageLink"
                             value={book.imageLink}
                             onChange={handleChange}
+                        />
+                    </div>
+
+                    <div className="mb-4">
+                        <label htmlFor="imageLink" className="block text-sm font-medium text-gray-300">
+                            Attach Book
+                        </label>
+                        <input
+                            className="input-field mt-1 px-4 py-2 p-2 border rounded w-full cursor-pointer"
+                            id="file_input"
+                            type="file"
                         />
                     </div>
 

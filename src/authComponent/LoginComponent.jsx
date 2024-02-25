@@ -52,9 +52,12 @@ const LoginComponent = () => {
                         <div className='text-center'>
                             <p id='account-paragraph' >Log in to BookCenter</p>
                         </div>
-                        <div className='flex justify-center bg-red-600'>
-                            {handleInvalidCredentials()}
+                        <div className='relative flex justify-center'>
+                            <div className='absolute bg-red-600 px-3'>
+                                {handleInvalidCredentials()}
+                            </div>
                         </div>
+
                         <div className='m-2 flex justify-center'>
                             <input placeholder='Email or username' type="username" className='input-box  px-3 py-2 w-4/5  rounded-sm' name="username" required value={username} onChange={(e) => setUsername(e.target.value)} />
                         </div>
