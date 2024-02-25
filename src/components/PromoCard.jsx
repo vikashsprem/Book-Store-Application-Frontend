@@ -19,8 +19,8 @@ function PromoCard() {
     }, [images]);
 
     return (
-        <div className="w-full h-2/5 relative ">
-            <img src={images[currentImageIndex]} alt="banner" />
+        <div className="w-full h-2/5 relative">
+            <img className="w-full" src={images[currentImageIndex]} alt="banner" />
             <div className="absolute bottom-48 left-0 right-0 text-center uppercase text-white text-4xl font-bold p-5 bg-black bg-opacity-30 ">
                 <p className="text-5lx shadow-gray-800">{quotes[currentImageIndex]}</p>
             </div>

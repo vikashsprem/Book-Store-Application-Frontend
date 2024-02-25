@@ -47,7 +47,7 @@ const LoginComponent = () => {
                     <NavBar />
                 </div>
 
-                <div className='flex justify-center'>
+                <div className='flex justify-center h-screen'>
                     <form onSubmit={handleSubmit} className='space-y-6 w-2/5-md m-2 p-3 rounded-md' id='form'>
                         <div className='text-center'>
                             <p id='account-paragraph' >Log in to BookCenter</p>
