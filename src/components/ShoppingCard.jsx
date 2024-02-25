@@ -28,7 +28,7 @@ const ShoppingCard = () => {
             <div className='m-2 md:w-1/4 h-4/5 p-8 '>
                 <div className="border-2 border-neutral-500 outline outline-2 outline-offset-2 grid justify-items-center">
                     <img
-                        src="https://cdn.kobo.com/book-images/b821b926-f56d-43c3-bfb7-81f4da772ca1/353/569/90/False/summary-of-the-alchemist-6.jpg"
+                        src={book.imageLink || 'https://via.placeholder.com/150'}
                         alt="Book Cover"
                         className="w-full h-auto mb-4 rounded-lg shadow-md"
                     />
@@ -61,7 +61,7 @@ const ShoppingCard = () => {
             </div>
 
             <div className="m-5 md:w-1/4 p-8 border-2 border-neutral-100 animate-slide-fade rounded-lg shadow-md">
-
+                <span className='md:text-4xl opacity-20 font-light'>CLICK THE BUTTON LEFT-BOTTOM BELOW THE BOOK IMAGE TO SEE THE SAMPLE BOOK CONTENT HERE</span>
             </div>
         </div>
     );

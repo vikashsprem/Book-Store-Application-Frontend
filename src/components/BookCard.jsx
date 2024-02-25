@@ -3,12 +3,12 @@ import bookImage from '../assets/think.jpg';
 
 function BookCard(props) {
   // Destructuring with a default empty object to handle the case where props.book is undefined
-  const { title, image, rating, price, discount } = props.book || {};
+  const { title, imageLink, rating, price, discount } = props.book || {};
 
   return (
     <div className="bg-gray-200 w-min h-min">
       <a href="#">
-        <img className="rounded-t-lg" src={image || bookImage} alt="product image" />
+        <img className="rounded-t-lg" src={imageLink || bookImage} alt="product image" />
       </a>
       <div className="px-1 pb-2">
         <a href="#">
@@ -27,8 +27,8 @@ function BookCard(props) {
           </div>
         </div>
         <div className="flex">
-          <p className="text-xs">
-            <span className="text-sm font-semi-bold dark:text-black">Rs. {price} </span> ({discount}% off)
+          <p className="text-sm text-green-500 font-bold">
+            <span className="text-sm font-bold dark:text-black">Rs. {price} </span> ({discount}% off)
           </p>
         </div>
       </div>

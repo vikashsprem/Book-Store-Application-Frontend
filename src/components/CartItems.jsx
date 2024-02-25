@@ -18,9 +18,9 @@ const CartItem = () => {
                     </div>
                     <div className="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
                         <div className="flex items-center border-gray-100">
-                            <span className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"> - </span>
-                            <input className="h-8 w-8 border bg-white text-center text-xs outline-none" type="number" value="2" min="1" />
-                            <span className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"> + </span>
+                            <span className="cursor-pointer rounded-l bg-gray-500 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"> - </span>
+                            <input className="h-8 w-8 border bg-green-400 text-center text-xs outline-none" type="number" value="2" min="1" />
+                            <span className="cursor-pointer rounded-r bg-gray-500 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"> + </span>
                         </div>
                         <div className="flex items-center space-x-4">
                             <p className="text-sm">₹98.00</p>
@@ -73,9 +73,9 @@ const SubTotal = () => {
 const CartItems = () => {
     return (
         <>
-            <div className="h-screen bg-gray-100 pt-10 space-y-1 animate-slide-fade">
-                <div className="h-min rounded-lg  p-3">
-                    <h2 className="text-center text-3xl font-bold uppercase">Cart Items details</h2>
+            <div className="h-screen bg-gray-100 pt-1 space-y-1 animate-slide-fad">
+                <div className="h-min rounded-lg  p-3 border-b-2 border-gray-400 m-5">
+                    <h2 className="text-center text-black text-3xl font-bold uppercase">Cart Items details</h2>
                 </div>
                 <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
                     <div flex flex-col>

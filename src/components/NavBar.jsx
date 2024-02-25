@@ -6,13 +6,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
 import "./component.css";
+import { useAuth } from "../security/AuthContext";
 
 function NavBar() {
     const numberOfItemsInCart = 0;
+    const { isAuthenticated } = useAuth();
     return (
         <>
-            <nav className="bg-white border-gray-200 dark:bg-gray-900">
-                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <nav className="bg-white border-gray-200 dark:bg-gray-900 pl-20">
+                <div className="max-w-screen flex flex-wrap items-center justify-between mx-auto p-4">
                     <Link href="#" className="flex items-center space-x-3 rtl:space-x-reverse" to="/">
                         <img src={logo} className="h-8" alt="book Logo" />
                         <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">BookCenter</span>
@@ -27,16 +29,16 @@ function NavBar() {
                         </button> */}
                     </div>
 
-                    <div className="flex items-center space-x-3  md:order-2">
+                    <div className="flex items-center space-x-5  md:order-2">
 
                         {/* <!-- Long Search bar on desktop view--> */}
                         <div className="">
-                            {false && <SearchBar />}
+                            {isAuthenticated && <SearchBar />}
                         </div>
 
 
                         {/* <!-- Cart Icon --> */}
-                        {/* <div className="flex items-center space-x-3 md:order-3">
+                        {isAuthenticated && <div className="flex items-center space-x-3 md:order-3">
                             <Link href="#" role="button" className="relative flex" to="/books/cart">
                                 <FontAwesomeIcon icon={faShoppingCart} className="text-blue-500 hover:text-blue-200" style={{ fontSize: '1.8rem' }} />
                                 {numberOfItemsInCart > 0 && (
@@ -45,11 +47,11 @@ function NavBar() {
                                     </span>
                                 )}
                             </Link>
-                        </div> */}
+                        </div>}
 
                         {/* <!-- Profile Icon --> */}
-                        <div className="">
-
+                        <div className="md:order-4">
+                            {isAuthenticated && <Profile />}
                         </div>
                     </div>
                 </div>
