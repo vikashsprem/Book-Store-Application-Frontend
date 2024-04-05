@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { addBook } from '../apiConfig/ApiService';
+import DropboxChooser from 'react-dropbox-chooser'
 import "./component.css";
 const BookInput = () => {
     const navigate = useNavigate();
+    const APP_KEY = "your_app_key_here";
+
     const [book, setBook] = useState({
         id: null,
         rating: 0,
@@ -17,12 +20,18 @@ const BookInput = () => {
         price: '',
         language: '',
         imageLink: '',
+        bookLink: '',
     });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setBook((prevBook) => ({ ...prevBook, [name]: value }));
     };
+
+    function handleSuccess(files) {
+        const tempUrl = files[0].link.replace('dl=0', 'dl=1');
+        book.bookLink = tempUrl;
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -172,11 +181,12 @@ const BookInput = () => {
                         <label htmlFor="imageLink" className="block text-sm font-medium text-gray-300">
                             Attach Book
                         </label>
-                        <input
-                            className="input-field mt-1 px-4 py-2 p-2 border rounded w-full cursor-pointer"
-                            id="file_input"
-                            type="file"
-                        />
+                        <DropboxChooser
+                            appKey={APP_KEY}
+                            success={handleSuccess}
+                            cancel={() => this.onCancel()}>
+                            <div className="dropbox-button input-field mt-1 px-4 py-2 p-2 border rounded w-full font-semibold bg-green-950 cursor-pointer">CLICK TO ATTACH BOOK FILE</div>
+                        </DropboxChooser>
                     </div>
 
                     <button type="submit" className="bg-blue-800 hover:bg-slate-900 text-white p-2 rounded mt-1 border w-full">

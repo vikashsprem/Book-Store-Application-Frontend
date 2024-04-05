@@ -15,6 +15,13 @@ const ShoppingCard = () => {
         });
     }, [id]);
 
+    const handleDownload = () => {
+        const link = document.createElement('a');
+        link.download = book.title;
+        link.href = book.bookLink;
+        link.click();
+    }
+
     const description =
         'This is a beautiful description for Book. It combines magic, mysticism, wisdom, and wonder into an inspiring tale of self-discovery. The story follows the journey of the main character, exploring themes of opportunity, reading life\'s omens, and the pursuit of dreams.';
 
@@ -55,7 +62,7 @@ const ShoppingCard = () => {
                 </div>
                 <h2 className="text-2xl font-bold border-t-2 my-7"></h2>
                 <div className="flex justify-center space-y-4">
-                    <button id='download-button' className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition duration-300">Download</button>
+                    <button id='download-button' className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition duration-300" onClick={handleDownload}>Download</button>
                     <button id='cart-button' className="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition duration-300">Add to Cart</button>
                 </div>
             </div>
