@@ -18,21 +18,20 @@ function BookList() {
 
   return (
     <>
-      <NavBar />
       <PromoCard />
       <div className="flex flex-wrap  p-5 gap-5 justify-center animate-slide-fade">
-        {Array.isArray(books) && books.map((book) => (
-          <Link key={book.id} to={`/books/${book.id}`}>
-            <BookCard key={book.id} book={book} />
-          </Link>
-        ))}
+        {Array.isArray(books) &&
+          books.map((book) => (
+            <Link key={book.id} to={`/books/${book.id}`}>
+              <BookCard key={book.id} book={book} />
+            </Link>
+          ))}
         <button
           onClick={() => navigate("/book/upload")}
           className="border border-blue-500 p-2 absolute right-0 bottom-0 m-5 rounded-3xl text-black font-bold px-5 animate-bounce"
           style={{
             backgroundColor: "rgb(99, 175, 171)",
             position: "fixed",
-
           }}
         >
           + UPLOAD BOOK

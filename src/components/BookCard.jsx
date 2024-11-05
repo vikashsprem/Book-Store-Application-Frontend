@@ -1,20 +1,21 @@
-import React, { useState } from 'react';
-import bookImage from '../assets/think.jpg';
+import React, { useState } from "react";
+import bookImage from "../assets/think.jpg";
 
 function BookCard(props) {
-  // Destructuring with a default empty object to handle the case where props.book is undefined
   const { title, imageLink, rating, price, discount } = props.book || {};
 
   return (
-    <div className="bg-gray-200 w-min h-min">
+    <div className="bg-gray-200 w-52">
       <a href="#">
-        <img className="rounded-t-lg" src={imageLink || bookImage} alt="product image" />
+        <img
+          className="rounded-t-lg"
+          src={imageLink || bookImage}
+          alt="product image"
+        />
       </a>
       <div className="px-1 pb-2">
         <a href="#">
-          <h5 className="text-xs text-gray-900 dark:text-black">
-            {title}
-          </h5>
+          <h5 className="text-xs text-gray-900 dark:text-black">{title}</h5>
         </a>
         <div className="flex items-center mt-2.5 mb-0.1">
           <div className="flex items-center rtl:space-x-reverse">
@@ -28,7 +29,10 @@ function BookCard(props) {
         </div>
         <div className="flex">
           <p className="text-sm text-green-500 font-bold">
-            <span className="text-sm font-bold dark:text-black">Rs. {price} </span> ({discount}% off)
+            <span className="text-sm font-bold dark:text-black">
+              Rs. {price}{" "}
+            </span>{" "}
+            ({discount}% off)
           </p>
         </div>
       </div>

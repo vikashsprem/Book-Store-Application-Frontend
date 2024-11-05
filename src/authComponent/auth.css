@@ -1,22 +1,9 @@
 /* ################## Login Component #######################3 */
 .input-box:focus {
   outline: none;
-  border: 1px solid blue;
+  border: 1px solid rgb(8, 8, 55);
   box-shadow: 0px 0px 3px #0d58e3;
 }
-
-
-
-
-::placeholder {
-  color: #000000;
-  /* Set the font style */
-  font-size: 15px;
-  text-align: center;
-}
-
-/* input text color styling as well */
-
 
 #account-paragraph {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
