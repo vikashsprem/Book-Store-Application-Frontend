@@ -1,6 +1,6 @@
-# BookCenter: Your Ultimate Book Share Platform
+# SyncStucy: Your Ultimate Book Sharing Platform
 
-Welcome to BookCenter, the ultimate book-sharing platform that fosters collaborative learning and exploration. BookCenter empowers users to share, discover, and engage with diverse resources, all within an intuitive interface that enhances the reading experience. Whether you're a voracious reader, an aspiring writer, or simply curious about the world of literature, BookCenter has something for everyone.
+Welcome to SyncStudy, the ultimate book-sharing platform that fosters collaborative learning and exploration. BookCenter empowers users to share, discover, and engage with diverse resources, all within an intuitive interface that enhances the reading experience. Whether you're a voracious reader, an aspiring writer, or simply curious about the world of literature, SyncStudy has something for everyone.
 
 ## Visuals
 
@@ -26,6 +26,7 @@ Welcome to BookCenter, the ultimate book-sharing platform that fosters collabora
 ## Technologies Used
 
 ### Front-End
+
 - **React**
 - **Vite**
 - **JavaScript**
@@ -34,11 +35,13 @@ Welcome to BookCenter, the ultimate book-sharing platform that fosters collabora
 - **Tailwind**
 
 ### Back-End
+
 - **Java**
 - **Spring Boot**
 - **Repo** - [Link](https://github.com/vikashSprem/Book-Store-Application-Backend.git)
 
 ### Web Security
+
 - **Java**
 - **Spring Security**
 - **JWT**
